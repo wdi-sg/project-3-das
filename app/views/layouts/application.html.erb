@@ -15,8 +15,15 @@
         <% if alert %>
         <p class="alert"><%= alert %></p>
         <% end %>
-
-        <%= yield %>
-
+        <div class="container">
+            <%= yield %>
+        </div>
     </body>
+
+    <footer>
+        <p>Posted by: DAS</p>
+        <p>Contact information:
+            <a href="contact@das.com">
+                contact@das.com</a>.</p>
+    </footer>
 </html>
