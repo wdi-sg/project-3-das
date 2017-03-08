@@ -22,5 +22,5 @@ test:
 
 production:
   adapter: postgresql
-  database: d4sbm3prnhbua9
-  url: <%= ENV['HEROKU_POSTGRESQL_ORANGE_URL']%>
+  database: de1lfdc8kekmfa
+  url: <%= ENV['HEROKU_POSTGRESQL_BLACK_URL']%>
