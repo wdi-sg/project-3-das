@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">LALALA</a>
+            <a class="navbar-brand" href="/">Common Places</a>
         </div>
 
         <div class="collapse navbar-collapse">
@@ -18,12 +18,19 @@
                 <li class="active">
                     <a href="/requests">Requests</a>
                 </li>
-                <li class="active">
+                <!-- <li class="active">
                     <a href="/condos">Condos</a>
-                </li>
+                </li> -->
                 <li class="active">
-                    <a href="/admins/sign_in">For Admin</a>
+                  <% if admin_signed_in? %>
+                  Logged in as
+                  <strong><%= current_admin.email %></strong>.
+                  <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %>
+                  <% else %>
+                  <%= link_to "Admin Login", new_admin_session_path, :class => 'navbar-link'  %>
+                  <% end %>
                 </li>
+              </p>
             </ul>
 
             <p class="navbar-text pull-right">
