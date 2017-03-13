@@ -13,9 +13,6 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="/services">Services</a>
-                </li>
-                <li class="active">
                     <a href="/requests/new">Requests</a>
                 </li>
                 <!-- <li class="active">
@@ -25,6 +22,9 @@
                   <% if admin_signed_in? %>
                   Logged in as
                   <strong><%= current_admin.email %></strong>.
+                  <li class="active">
+                      <a href="/services">Services</a>
+                  </li>
                   <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %>
                   <% else %>
                   <%= link_to "Admin Login", new_admin_session_path, :class => 'navbar-link'  %>
@@ -34,11 +34,14 @@
             </ul>
 
             <p class="navbar-text pull-right">
-                <% if user_signed_in? %>
+                <% if user_signed_in? && current_user.email != "admin@das.com" %>
                 Logged in as
                 <strong><%= current_user.email %></strong>.
                 <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
                 |
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                <% elsif user_signed_in? && current_user.email == "admin@das.com" %>
+                <strong>Welcome Admin</strong>
                 <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
                 <% else %>
                 <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
