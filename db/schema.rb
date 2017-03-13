@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170313060916) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -25,8 +28,8 @@ ActiveRecord::Schema.define(version: 20170313060916) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_admins_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_admins_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "condos", force: :cascade do |t|
@@ -43,7 +46,7 @@ ActiveRecord::Schema.define(version: 20170313060916) do
     t.integer  "request_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["request_id"], name: "index_invoices_on_request_id"
+    t.index ["request_id"], name: "index_invoices_on_request_id", using: :btree
   end
 
   create_table "requests", force: :cascade do |t|
@@ -51,8 +54,8 @@ ActiveRecord::Schema.define(version: 20170313060916) do
     t.integer  "service_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["service_id"], name: "index_requests_on_service_id"
-    t.index ["user_id"], name: "index_requests_on_user_id"
+    t.index ["service_id"], name: "index_requests_on_service_id", using: :btree
+    t.index ["user_id"], name: "index_requests_on_user_id", using: :btree
   end
 
   create_table "services", force: :cascade do |t|
@@ -81,8 +84,11 @@ ActiveRecord::Schema.define(version: 20170313060916) do
     t.integer  "postal_code"
     t.string   "first_name"
     t.string   "last_name"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "invoices", "requests"
+  add_foreign_key "requests", "services"
+  add_foreign_key "requests", "users"
 end
