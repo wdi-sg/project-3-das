@@ -5,6 +5,15 @@
 <div class="">
 
 </div>
+  <div class= "field">
+    <%= f.label :first_name %> <br />
+    <%= f.text_field :first_name, autocomplete: "off" %>
+  </div>
+  <div class= "field">
+    <%= f.label :last_name %> <br />
+    <%= f.text_field :last_name, autocomplete: "off" %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -27,6 +36,28 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+  <div class="field">
+    <%= f.label :condo %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.text_field :condo, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contact %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.telephone_field :contact, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :unit %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.text_field :unit, autocomplete: "off" %>
+  </div>
+
+  <div class= "field">
+    <%= f.label :postal_code %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.text_field :postal_code, autocomplete: "off" %>
+  </div>
+
+
 
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
