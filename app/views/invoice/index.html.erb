@@ -96,7 +96,7 @@
 
                                 <td>
                                     <%= "Print Invoice Number"%><br>
-                                    <%= "Print Today's Date" %><br>
+                                    <%= Time.now.strftime("%d/%m/%Y") %><br>
                                 </td>
                             </tr>
                         </table>
@@ -135,7 +135,7 @@
                     </td>
 
                     <td>
-                        1000
+                        <%= "$Total Amount"%>
                     </td>
                 </tr>
 
