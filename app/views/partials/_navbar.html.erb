@@ -12,7 +12,6 @@
                 <% if user_signed_in? && current_user.email != "admin@das.com" %>
                 Hello
                 <strong><%= current_user.first_name%></strong>
-                <a href="/requests/new" class="btn btn-default">Request a Service</a>
 
                 <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-default' %>
                 |
