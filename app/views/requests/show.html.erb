@@ -2,12 +2,22 @@
 
 <p>
   <strong>User:</strong>
-  <%= @request.user %>
+  <%= @request.user.first_name + " " + @request.user.last_name %>
 </p>
 
 <p>
   <strong>Service:</strong>
-  <%= @request.service %>
+  <%= @request.service.kind %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @request.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @request.time %>
 </p>
 
 <%= link_to 'Edit', edit_request_path(@request) %> |
