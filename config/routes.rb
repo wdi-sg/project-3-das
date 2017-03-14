@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :admins
   resources :requests
+  get '/requests/new/:id' => "requests#new", as: "new_request_with_id"
   resources :condos
   resources :services
   resources :invoice
