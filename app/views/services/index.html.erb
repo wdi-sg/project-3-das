@@ -16,6 +16,8 @@
       <tr>
         <td><%= service.kind %></td>
         <td><%= service.cost %></td>
+        <td><%= service.description %></td>
+        <td><%= image_tag service.image, width:300 if service.image.present?  %></td>
         <td><%= link_to 'Show', service %></td>
         <td><%= link_to 'Edit', edit_service_path(service) %></td>
         <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>

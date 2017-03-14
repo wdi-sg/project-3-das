@@ -4,15 +4,16 @@
           <a class="navbar-brand" href="/"><%= image_tag "logo/Common_places_logo.png", :height => "75" %></a>
         </div>
 
-        <div class="navbar-header">
-          <a href="/requests/new" class="btn btn-default">Request a Service</a>
-        </div>
+    
 
         <div class="collapse navbar-collapse">
             <p class="navbar-text pull-right">
-              <% if user_signed_in? && current_user.email != "admin@das.com" %>
-              Hello
-              <strong><%= current_user.first_name%></strong>
+
+              <a href="/requests/new" class="btn btn-default">Request a Service</a>
+                <% if user_signed_in? && current_user.email != "admin@das.com" %>
+                Hello
+                <strong><%= current_user.first_name%></strong>
+
                 <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-default' %>
                 |
                 <%= link_to 'View Invoice', invoice_index_path, :class => 'btn btn-default' %>
