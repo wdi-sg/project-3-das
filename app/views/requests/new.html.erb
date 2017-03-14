@@ -1,9 +1,12 @@
 <h1>Request a Service</h1>
 
+<%= render 'form', request: @request %>
+<%= link_to 'Back', requests_path %>
+
 <div class="row">
   <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <%= link_to image_tag("services/laundry.jpg", border: 0, class: "service-button"), "/services/1" %>
+    <div class="thumbnail services">
+      <%= image_tag("services/laundry.jpg", border: 0, class: "service-button", data: {value: 1}) %>
       <div class="caption">
         <h3>Laundry</h3>
         <p>...</p>
@@ -12,8 +15,8 @@
   </div>
 
   <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <%= link_to image_tag("services/dry cleaning.jpg", border: 0, class: "service-button"), "/services/2" %>
+    <div class="thumbnail services">
+      <%= image_tag("services/dry cleaning.jpg", border: 0, class: "service-button", data: {value: 2}) %>
       <div class="caption">
         <h3>Dry Cleaning</h3>
         <p>...</p>
@@ -22,8 +25,8 @@
   </div>
 
   <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <%= link_to image_tag("services/housekeeping.jpg", border: 0, class: "service-button"), "/services/3" %>
+    <div class="thumbnail services">
+      <%= image_tag("services/housekeeping.jpg", border: 0, class: "service-button", data: {value: 3}) %>
       <div class="caption">
         <h3>Housekeeping</h3>
         <p>...</p>
@@ -32,8 +35,8 @@
   </div>
 
   <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <%= link_to image_tag("services/pet_grooming.jpg", border: 0, class: "service-button"), "/services/4" %>
+    <div class="thumbnail services">
+      <%= image_tag("services/pet_grooming.jpg", border: 0, class: "service-button", data: {value: 4}) %>
       <div class="caption">
         <h3>Mobile Pet Groomin</h3>
         <p>...</p>
@@ -42,8 +45,8 @@
   </div>
 
   <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <%= link_to image_tag("services/groceries.jpg", border: 0, class: "service-button"), "/services/5" %>
+    <div class="thumbnail services">
+      <%= image_tag("services/groceries.jpg", border: 0, class: "service-button", data: {value: 5}) %>
       <div class="caption">
         <h3>Groceries</h3>
         <p>...</p>
@@ -52,8 +55,8 @@
   </div>
 
   <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <%= link_to image_tag("services/car_detailing.jpg", border: 0, class: "service-button"), "/services/6" %>
+    <div class="thumbnail services">
+      <%= image_tag("services/car_detailing.jpg", border: 0, class: "service-button", data: {value: 6}) %>
       <div class="caption">
         <h3>Car Detailing</h3>
         <p>...</p>
@@ -62,6 +65,3 @@
   </div>
 
 </div>
-<!--
-<%= render 'form', request: @request %>
-<%= link_to 'Back', requests_path %> -->
