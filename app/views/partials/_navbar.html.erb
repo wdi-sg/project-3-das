@@ -5,21 +5,29 @@
         </div>
 
         <div class="collapse navbar-collapse">
-
+            <ul class="nav navbar-nav">
+                <li class="active">
+                  <li>
+                    <a href="/requests/new">Requests</a>
+                  </li>
+                </li>
+              </p>
+            </ul>
             <p class="navbar-text pull-right">
               <a href="/requests/new" class="btn btn-default">Request a Service</a>
                 <% if user_signed_in? && current_user.email != "admin@das.com" %>
                 Hello
-                <strong><%= current_user.first_name%></strong>
-                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-default' %>
-
-                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-default'  %>
+                <strong><%= current_user.first_name%></strong>.
+                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+                |
+                <%= link_to 'View Invoice', invoice_index_path, :class => 'navbar-link' %>
+                |
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
                 <% elsif user_signed_in? && current_user.email == "admin@das.com" %>
                 <strong>Welcome Admin</strong>
                 <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-default'  %>
                 <% else %>
                 <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-default'  %>
-
                 <%= link_to "Login", new_user_session_path, :class => 'btn btn-default'  %>
                 <% end %>
             </p>
