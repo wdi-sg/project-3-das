@@ -12,6 +12,7 @@ gem 'devise'
 gem 'cloudinary'
 gem 'carrierwave'
 
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 
@@ -58,6 +59,10 @@ end
 
 group :production do
   gem 'pg'
+end
+
+group :assets do
+  gem 'twitter-bootstrap-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
