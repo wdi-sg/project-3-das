@@ -139,7 +139,12 @@
                 <td>
                     Item
                 </td>
-
+                <td>
+                    Date
+                </td>
+                <td>
+                    Time
+                </td>
                 <td>
                     Price
                 </td>
@@ -152,6 +157,12 @@
                   <%= request.service.kind %>
                 </td>
                 <td>
+                  <%= request.date.to_date %>
+                </td>
+                <td>
+                  <%= request.time.to_time.strftime("%I:%M %p") %>
+                </td>
+                <td>
                   $<%= request.service.cost %>
                 </td>
             </tr>
@@ -160,7 +171,8 @@
 
             <tr class="total">
                 <td></td>
-
+                <td></td>
+                <td></td>
                 <td>
                    Total: $<%= sum %>
                 </td>
