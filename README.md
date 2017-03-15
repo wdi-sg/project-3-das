@@ -1,6 +1,6 @@
 # README
 
-https://polar-garden-85493.herokuapp.com/
+https://commonplaces-app.herokuapp.com/
 
 admin@das.com --> This is the Admin account
 
