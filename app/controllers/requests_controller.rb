@@ -1,4 +1,5 @@
 class RequestsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_request, only: [:show, :edit, :update, :destroy]
 
   # GET /requests
@@ -15,6 +16,7 @@ class RequestsController < ApplicationController
   # GET /requests/new
   def new
     @request = Request.new
+    @request.id = params[:id] if params[:id]
   end
 
   # GET /requests/1/edit
@@ -70,5 +72,11 @@ class RequestsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_params
       params.require(:request).permit(:user_id, :service_id, :date, :time)
+    end
+
+    def authenticate_user!
+      if current_user.blank?
+        redirect_to new_user_session_path :notice => 'Please Login or Signup'
+      end
     end
 end
