@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20170314143103) do
     t.datetime "updated_at", null: false
     t.datetime "date"
     t.datetime "time"
-    t.string   "completed"
+    t.boolean  "completed"
     t.index ["service_id"], name: "index_requests_on_service_id", using: :btree
     t.index ["user_id"], name: "index_requests_on_user_id", using: :btree
   end
