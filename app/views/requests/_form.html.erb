@@ -31,9 +31,9 @@
       <%= f.time_field :time, autofocus: true %>
   </div>
 
-  <div class="field", hidden="true">
+  <div class="field">
       <%= f.label :completed %><br/>
-      <%= f.text_field :completed %>
+      <%= f.text_field :completed, :value => false %>
   </div>
 
   <div class="actions">
