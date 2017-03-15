@@ -74,7 +74,7 @@ class CondosController < ApplicationController
     end
 
     def authenticate_user!
-      if current_user.email == "admin.das.com"
+      if current_user.email == "admin@das.com"
         return
       else
         redirect_to root_path, :notice => 'You are not authorised to access this page'
