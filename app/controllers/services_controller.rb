@@ -1,4 +1,6 @@
 class ServicesController < ApplicationController
+  before_action :not_logged_in!, only: [:show]
+  before_action :authenticate_user!, only: [:new]
   before_action :set_service, only: [:show, :edit, :update, :destroy]
 
   # GET /services
@@ -76,4 +78,17 @@ class ServicesController < ApplicationController
       params.require(:service).permit( :description, :image)
     end
 
+    def not_logged_in!
+      if current_user.blank?
+        redirect_to user_session_path, :notice => 'Please Login or Signup'
+      end
+    end
+
+    def authenticate_user!
+      if current_user.email == "admin@das.com"
+        return
+      else
+        redirect_to root_path, :notice => 'You are not authorised to access this page'
+      end
+    end
 end

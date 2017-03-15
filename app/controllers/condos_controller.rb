@@ -1,4 +1,5 @@
 class CondosController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_condo, only: [:show, :edit, :update, :destroy]
 
   # GET /condos
@@ -70,5 +71,13 @@ class CondosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def condo_params
       params.require(:condo).permit(:name, :postal_code)
+    end
+
+    def authenticate_user!
+      if current_user.email == "admin@das.com"
+        return
+      else
+        redirect_to root_path, :notice => 'You are not authorised to access this page'
+      end
     end
 end
