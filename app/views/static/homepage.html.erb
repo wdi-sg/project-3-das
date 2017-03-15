@@ -1,20 +1,70 @@
 <h1>Common Places</h1>
 
-<div class="container" text-align: centre>
-  I would like to request for <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      Services
-      <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-      <li><a href="/services/1">Laundry</a></li>
-      <li><a href="/services/2">Dry Cleaning</a></li>
-      <li><a href="/services/3">Housekeeping</a></li>
-      <li><a href="/services/4">Mobile Pet Grooming</a></li>
-      <li><a href="/services/5">Groceries</a></li>
-      <li><a href="/services/6">Car Detailing</a></li>
-      <li role="separator" class="divider"></li>
-      <li><a href="#">Suggest</a></li>
-    </ul>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <%= image_tag("home/Ironing.jpg", alt: "Ironing")%>
+      <div class="carousel-caption">
+        <h3>Laundry</h3>
+      </div>
+    </div>
+
+    <div class="item">
+      <%= image_tag("home/shirts.jpg", alt: "Ironing")%>
+      <div class="carousel-caption">
+        <h3>Dry Cleaning</h3>
+      </div>
+    </div>
+
+    <div class="item">
+      <%= image_tag("home/housekeeping.jpg", alt: "Ironing")%>
+      <div class="carousel-caption">
+        <h3>Housekeeping</h3>
+      </div>
+    </div>
+
+    <div class="item">
+      <%= image_tag("home/grooming.jpg", alt: "Dog Grooming")%>
+      <div class="carousel-caption">
+        <h3>Mobile Pet Grooming</h3>
+      </div>
+    </div>
+
+    <div class="item">
+      <%= image_tag("home/groceries.jpg", alt: "Groceries")%>
+      <div class="carousel-caption">
+        <h3>Groceries</h3>
+      </div>
+    </div>
+
+    <div class="item">
+      <%= image_tag("home/car_detailing.jpg", alt: "Car Detailing")%>
+      <div class="carousel-caption">
+        <h3>Car Detailing</h3>
+      </div>
+    </div>
   </div>
+
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
