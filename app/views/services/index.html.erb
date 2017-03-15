@@ -13,8 +13,8 @@
           <h3><%= service.kind %></h3>
           <!-- <p><%= service.description %></p> -->
           <% if user_signed_in? && current_user.email == "admin@das.com" %>
-            <%= link_to 'Edit', edit_service_path(service) %>
-            <%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Edit', edit_service_path(service), class:"btn btn-info", style:"color:white" %>
+            <%= link_to 'Destroy', service, class:"btn btn-danger", style:"color:white", method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
         </div>
       </div>
@@ -25,5 +25,5 @@
 <br>
 
 <% if user_signed_in? && current_user.email == "admin@das.com" %>
-<%= link_to 'New Service', new_service_path %>
+<%= link_to 'New Service', new_service_path, class:"btn btn-default" %>
 <% end %>
