@@ -1,4 +1,5 @@
 class ServicesController < ApplicationController
+  before_action :not_logged_in!, only: [:show, :new,]
   before_action :authenticate_user!, only: [:new]
   before_action :set_service, only: [:show, :edit, :update, :destroy]
 
@@ -75,6 +76,12 @@ class ServicesController < ApplicationController
 
     def image_params
       params.require(:service).permit( :description, :image)
+    end
+
+    def not_logged_in!
+      if current_user.blank?
+        redirect_to user_session_path, :notice => 'Please Login or Signup'
+      end
     end
 
     def authenticate_user!
