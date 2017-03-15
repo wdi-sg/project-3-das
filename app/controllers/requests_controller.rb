@@ -76,7 +76,7 @@ class RequestsController < ApplicationController
 
     def authenticate_user!
       if current_user.blank?
-        redirect_to new_user_session_path :notice => 'Please Login or Signup'
+        redirect_to user_session_path, :notice => 'Please Login or Signup'
       end
     end
 end
