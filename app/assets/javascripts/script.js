@@ -1,7 +1,7 @@
 /* global $ jQuery */
 
 $(document).ready(function () {
-  var $services = $('.service-button')
+  var $services = $('.service-dropdown')
   var $serviceInput = $('#request_service_id')
 
   console.log($services)

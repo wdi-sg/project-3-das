@@ -11,14 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" hidden="true">
     <%= f.label :user_id %>
     <%= f.text_field :user_id, :value => current_user.id %>
   </div>
 
   <div class="field">
     <%= f.label :service_id %>
-    <%= f.text_field :service_id %>
+    <%= f.select :service_id, options_for_select({"Laundry" => "1", "Dry Cleaning" => "2", "Housekeeping" => "3", "Mobile Pet Grooming" => "4", "Groceries" => "5", "Car Detailing" => "6"})%>
+
+    <!-- <%= f.text_field :service_id %> -->
   </div>
 
   <div class="field">
