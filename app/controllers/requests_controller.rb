@@ -15,6 +15,7 @@ class RequestsController < ApplicationController
   # GET /requests/new
   def new
     @request = Request.new
+    @request.id = params[:id] if params[:id]
   end
 
   # GET /requests/1/edit
