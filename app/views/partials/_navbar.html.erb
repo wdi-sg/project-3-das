@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<!-- <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="/"><%= image_tag "logo/Common_places_logo.png", :height => "75" %></a>
@@ -29,4 +29,46 @@
             </p>
         </div>
     </div>
-</nav>
+</nav> -->
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">
+                      <a class="navbar-brand" href="/"><%= image_tag "logo/Common_places_logo.png", :height => "75" %></a>
+          </div>
+        </div>
+
+        <div class="navbar-collapse collapse">
+          <div class="menu">
+            <ul class="nav nav-tabs" role="tablist">
+              <% if user_signed_in? && current_user.email != "admin@das.com" %>
+              Hello
+              <strong><%= current_user.first_name%></strong>
+              <li role="presentation"><a href="/users/edit">Edit Profile</a></li>
+              <li role="presentation"><a href="/requests">View Invoice</a></li>
+              <li role="presentation"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+
+              <% elsif user_signed_in? && current_user.email == "admin@das.com" %>
+              <strong>Welcome Admin</strong>
+              <li role="presentation"><a href="/services/new">Add Services</a></li>
+              <li role="presentation"><a href="/users/sign_out">Log Out</a></li>
+              <!-- <li role="presentation"><a href="/about" class="active">About Us</a></li> -->
+              <% else %>
+              <li role="presentation"><a href="/services">View Services</a></li>
+              <li role="presentation"><a href="/users/sign_in">Login</a></li>
+              <li role="presentation"><a href="/users/sign_up">Sign Up</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </nav>
