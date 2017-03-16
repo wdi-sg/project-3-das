@@ -1,31 +1,22 @@
-# README
+<img src="http://imgur.com/oYYvjGv" width="25%">
 
-https://commonplaces-app.herokuapp.com/
+# Commonplaces
 
-admin@das.com --> This is the Admin account
+Commonplaces
 
-123456 --> Password for Admin Account
+[Visit Us!]https://commonplaces-app.herokuapp.com/
 
+## Ruby Version and System dependencies
+* Rails
+* Devise
+* Cloudinary
+* Carrierwave
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Configuration
+* Git clone the repository
+* Run `bundle install` on your terminals to install all dependencies
+* Run `rails db:migrate`
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Admin to login
+* admin@das.com --> This is the Admin account
+* 123456 --> Password for Admin Account
