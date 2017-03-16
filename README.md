@@ -2,7 +2,7 @@
 
 https://commonplaces-app.herokuapp.com/
 
-admin@das.com --> This is the Admin account
+admin@das.com --> This is the Admin accourant
 
 123456 --> Password for Admin Account
 
