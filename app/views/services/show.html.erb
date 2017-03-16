@@ -18,7 +18,7 @@
 </p>
 
 <p>
-  <a href="/requests/new/" class="btn btn-info" style="color:white">Request</a>
+  <a href="/requests/new/?service_id=<%=params[:id]%>" class="btn btn-info" style="color:white">Request</a>
 </p>
 
 <%= link_to 'Edit', edit_service_path(@service), class:"btn btn-primary", style:"color:white" %> |
