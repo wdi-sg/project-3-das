@@ -1,25 +1,30 @@
-<p>
-  <strong>Kind:</strong>
-  <%= @service.kind %>
-</p>
+<div class="services">
+  <p>
+    <strong>Kind:</strong>
+    <%= @service.kind %>
+  </p>
 
-<p>
-  <strong>Cost:</strong>
-  <%= @service.cost %>
-</p>
+  <p>
+    <strong>Cost:</strong>
+    <%= @service.cost %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @service.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @service.description %>
+  </p>
 
-<p>
-  <img src="<%= @service.image %>" alt="<%= @service.kind %>">
-</p>
+  <p>
+    <img src="<%= @service.image %>" alt="<%= @service.kind %>">
+  </p>
 
-<p>
-  <a href="/requests/new/" class="btn btn-info" style="color:white">Request</a>
-</p>
 
-<%= link_to 'Edit', edit_service_path(@service), class:"btn btn-primary", style:"color:white" %> |
-<%= link_to 'Back', services_path, class:"btn btn-default"%>
+<% if user_signed_in? && current_user.email != "admin@das.com" %>
+  <p>
+    <a href="/requests/new/" class="btn btn-info" style="color:white">Request</a>
+  </p>
+<% else %>  
+  <%= link_to 'Edit', edit_service_path(@service), class:"btn btn-primary", style:"color:white" %> |
+  <%= link_to 'Back', services_path, class:"btn btn-default"%>
+<% end %>
+</div>
