@@ -3,24 +3,27 @@
     <head>
         <title>Project3Das</title>
         <%= csrf_meta_tags %>
-
-
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
-        <link rel="stylesheet" href="//maxcdn.bootsError: source does not appear to be markup.rapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-      <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Vidaloka" rel="stylesheet">
 
-      <link href="css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="css/font-awesome.min.css">
-      <link rel="stylesheet" href="css/font-awesome.css">
-      <link rel="stylesheet" href="css/animate.css">
-      <link href="css/style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One|Vidaloka">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animateCSS/1.2.1/jquery.animatecss.min.js">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <link href="css/style.css" rel="stylesheet" />
+
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     </head>
 
     <body>
 
       <div class="container">
+        <%= render "partials/navbar" %>
+
         <% if notice %>
           <!-- show the notice -->
           <p class="alert alert-success"><%= notice %></p>
@@ -32,24 +35,12 @@
         <% end %>
       </div>
 
-
-        <%= render "partials/navbar" %>
-        <div class="container">
-          <%= yield %>
-        </div>
+        <%= yield %>
         <%= render "partials/footer" %>
-
 
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.js"></script>
-      <!-- <script src="assets/js/jquery.js"></script>
 
-      <script src="js/bootstrap.min.js"></script>
-      <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
-      <script src="assets/js/wow.min.js"></script>
-      <script src="assets/js/jquery.easing.min.js"></script>
-      <script src="assets/js/jquery.isotope.min.js"></script>
-      <script src="assets/js/functions.js"></script> -->
     </body>
 </html>
