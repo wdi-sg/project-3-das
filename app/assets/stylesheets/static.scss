@@ -62,11 +62,11 @@ a:hover {
 	border: 1px solid transparent;
 	border-radius: 4px;
 	background-color: #A2D729;
-	color:#999;
+	color:#6B676D;
 }
 
 .btn-default {
-	color: #999;
+	color: #6B676D;
 	background-color: #A2D729;
 	border-color: #A2D729;
 }
@@ -82,7 +82,7 @@ a:hover {
   Menu and Navigation
 ============================ */
 .navigation  {
-	background-color:#FAFFFD;
+	background-color:#FBFFFD;
 	padding:0;
 }
 
@@ -128,9 +128,9 @@ a:hover {
 
 .nav-tabs > li > a:hover {
 	color: #FA824C;
-	border-color: #FAFFFD #FAFFFD #FAFFFD;
+	border-color: #FBFFFD #FBFFFD #FBFFFD;
 	border-radius:0;
-	background-color:#FAFFFD;
+	background-color:#FBFFFD;
 	transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
@@ -150,7 +150,7 @@ a:hover {
 ============================ */
 .slider {
   position: relative;
-  padding:50px;
+  padding:20px;
   background:#FAFFFD;
 }
 

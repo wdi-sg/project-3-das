@@ -19,14 +19,15 @@
               <% if user_signed_in? && current_user.email != "admin@das.com" %>
               Hello
               <strong><%= current_user.first_name%></strong>
-              <li role="presentation"><a href="/users/edit">Edit Profile</a></li>
+              <li role="presentation"><a href="/services">View Services</a></li>
               <li role="presentation"><a href="/requests">View Invoice</a></li>
+              <li role="presentation"><a href="/users/edit">Edit Profile</a></li>
               <li role="presentation"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
 
               <% elsif user_signed_in? && current_user.email == "admin@das.com" %>
               <strong>Welcome Admin</strong>
               <li role="presentation"><a href="/services/new">Add Services</a></li>
-              <li role="presentation"><a href="/users/sign_out">Log Out</a></li>
+              <li role="presentation"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
               <!-- <li role="presentation"><a href="/about" class="active">About Us</a></li> -->
               <% else %>
               <li role="presentation"><a href="/services">View Services</a></li>
