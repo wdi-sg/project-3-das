@@ -22,7 +22,7 @@
                 <% elsif user_signed_in? && current_user.email == "admin@das.com" %>
                 <strong>Welcome Admin</strong>
                 <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-default'  %>
-                <%= link_to 'Services', '/services/new', :class => 'btn btn-default' %>
+                <%= link_to 'Services', '/services/', :class => 'btn btn-default' %>
                 <% else %>
                 <a href="/services" class="btn btn-default">Services</a>
                 <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-default'  %>

@@ -11,13 +11,13 @@
 
 <p>
   <strong>Date:</strong>
-  <%= @request.date %>
+  <%= @request.date.strftime("%B %d, %Y") %>
 </p>
 
 <p>
   <strong>Time:</strong>
-  <%= @request.time %>
+  <%= @request.time.strftime("%H:%M %p")%>
 </p>
 
-<%= link_to 'Edit', edit_request_path(@request) %> |
-<%= link_to 'Back', requests_path %>
+<%= link_to 'Edit', edit_request_path(@request), class:"btn btn-default" %>
+<!-- <%= link_to 'Back', requests_path %> -->

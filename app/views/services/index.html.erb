@@ -3,88 +3,27 @@
 <h1>Services</h1>
 
 <div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail services">
-      <%= link_to image_tag("services/laundry.jpg", border: 0, class: "service-button", data: {value: 1}), "services/1"%>
-      <div class="caption">
-        <h3>Laundry</h3>
-        <p>...</p>
+  <% @services.each do |service| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail services">
+        <%= link_to service do %>
+          <%= image_tag service.image, width:419, height:219 if service.image.present? %>
+        <% end %>
+        <div class="caption">
+          <h3><%= service.kind %></h3>
+          <!-- <p><%= service.description %></p> -->
+          <% if user_signed_in? && current_user.email == "admin@das.com" %>
+            <%= link_to 'Edit', edit_service_path(service), class:"btn btn-info", style:"color:white" %>
+            <%= link_to 'Destroy', service, class:"btn btn-danger", style:"color:white", method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail services">
-      <%= link_to image_tag("services/dry cleaning.jpg", border: 0, class: "service-button", data: {value: 2}), "services/2"%>
-      <div class="caption">
-        <h3>Dry Cleaning</h3>
-        <p>...</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail services">
-      <%= link_to image_tag("services/housekeeping.jpg", border: 0, class: "service-button", data: {value: 3}), "services/3"%>
-      <div class="caption">
-        <h3>Housekeeping</h3>
-        <p>...</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail services">
-      <%= link_to image_tag("services/pet_grooming.jpg", border: 0, class: "service-button", data: {value: 4}), "services/4"%>
-      <div class="caption">
-        <h3>Mobile Pet Groomin</h3>
-        <p>...</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail services">
-      <%= link_to image_tag("services/groceries.jpg", border: 0, class: "service-button", data: {value: 5}), "services/5"%>
-      <div class="caption">
-        <h3>Groceries</h3>
-        <p>...</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail services">
-      <%= link_to image_tag("services/car_detailing.jpg", border: 0, class: "service-button", data: {value: 6}), "services/6"%>
-      <div class="caption">
-        <h3>Car Detailing</h3>
-        <p>...</p>
-      </div>
-    </div>
-  </div>
-
+  <% end %>
 </div>
-
-
-
-<!-- <table>
-    <tbody>
-    <% @services.each do |service| %>
-      <tr>
-        <td><%= service.kind %></td>
-        <td><%= service.cost %></td>
-        <td><%= service.description %></td>
-        <td><%= image_tag service.image, width:300 if service.image.present?  %></td>
-        <td><%= link_to 'Show', service %></td>
-        <td><%= link_to 'Edit', edit_service_path(service) %></td>
-        <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table> -->
 
 <br>
 
 <% if user_signed_in? && current_user.email == "admin@das.com" %>
-<%= link_to 'New Service', new_service_path %>
+<%= link_to 'New Service', new_service_path, class:"btn btn-default" %>
 <% end %>
