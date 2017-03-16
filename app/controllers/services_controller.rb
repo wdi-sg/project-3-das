@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  before_action :not_logged_in!, only: [:show]
+  before_action :not_logged_in!, only: [:new, :edit, :update, :destory]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destory]
   before_action :set_service, only: [:show, :edit, :update, :destroy]
 
