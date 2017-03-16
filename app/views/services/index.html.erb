@@ -7,16 +7,15 @@
   <%= link_to service do %>
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail services">
-          <%= image_tag service.image, width:200, height:200 if service.image.present? %>
-        <div class="caption">
-          <h3><%= service.kind %></h3>
-          <!-- <p><%= service.description %></p> -->
-          <% if user_signed_in? && current_user.email == "admin@das.com" %>
+          <%= image_tag service.image, width:419, height:200 if service.image.present? %>
+          <div class="caption">
+            <h3><%= service.kind %></h3>
+            <% if user_signed_in? && current_user.email == "admin@das.com" %>
             <%= link_to 'Edit', edit_service_path(service), class:"btn btn-info", style:"color:white" %>
             <%= link_to 'Destroy', service, class:"btn btn-danger", style:"color:white", method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
+            <% end %>
+          </div>
         </div>
-      </div>
       <% end %>
     </div>
   <% end %>
