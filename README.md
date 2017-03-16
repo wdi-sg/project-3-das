@@ -1,4 +1,6 @@
-# Commonplaces
+# Common Places
+
+[Demo Website](http://commonplaces-app.herokuapp.com/)
 
 ## Ruby Version and System dependencies
 * Rails
