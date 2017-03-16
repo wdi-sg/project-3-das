@@ -1,10 +1,8 @@
-<img src="http://imgur.com/oYYvjGv" width="25%">
-
 # Commonplaces
 
 Commonplaces
 
-[Visit Us!]https://commonplaces-app.herokuapp.com/
+* https://commonplaces-app.herokuapp.com/
 
 ## Ruby Version and System dependencies
 * Rails
