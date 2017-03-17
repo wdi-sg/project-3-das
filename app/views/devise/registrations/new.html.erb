@@ -16,7 +16,6 @@
       <%= f.label :email %><br/>
       <%= f.email_field :email, autofocus: true %>
   </div>
-
   <div class="field">
       <%= f.label :password %>
       <% if @minimum_password_length %>
@@ -25,35 +24,26 @@
       <% end %><br/>
       <%= f.password_field :password, autocomplete: "off" %>
   </div>
-
   <div class="field">
       <%= f.label :password_confirmation %><br/>
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
   <div class="field">
       <%= f.label :condo %><br/>
       <%= f.text_field :condo, autocomplete: "off" %>
   </div>
-
   <div class="field">
       <%= f.label :unit %><br/>
       <%= f.text_field :unit, autocomplete: "off" %>
   </div>
-
   <div class="field">
       <%= f.label :postal_code %><br/>
       <%= f.text_field :postal_code, autocomplete: "off" %>
   </div>
-
   <div class="field">
       <%= f.label :phone_number %><br/>
       <%= f.telephone_field :contact, autocomplete: "off" %>
   </div>
-
-
-  </div>
-
   <div class="actions">
     <%= f.submit "Sign up", class:"btn btn-default" %>
   </div>
