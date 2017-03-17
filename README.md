@@ -17,7 +17,7 @@ At Common Places, we believe that all your errands can be run conveniently while
 * Viewpoint for User
 
 ![alt tag](http://i.imgur.com/rDcmRgL.png)
-![alt tag](http://i.imgur.com/F76wWmz.png
+![alt tag](http://i.imgur.com/F76wWmz.png)
 ![alt tag](http://i.imgur.com/j5jVGKc.png)
 ![alt tag](http://i.imgur.com/9gcQLf9.png)
 ![alt tag](http://i.imgur.com/wY5l5nR.png)
