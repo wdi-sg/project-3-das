@@ -1,3 +1,4 @@
+<% if current_user.email == "admin@das.com" %>
 <div class="container">
 
   <table>
@@ -22,7 +23,6 @@
     </tr>
 
     <tr class="item">
-        <% if current_user.email == "admin@das.com" %>
         <% sum = 0 %>
         <% @requests.each do |request| %>
         <td>
