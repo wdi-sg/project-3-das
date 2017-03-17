@@ -4,12 +4,13 @@
             <td colspan="2">
                 <table>
                     <tr>
-                      <td class="title">
-                          <%= image_tag "logo/Common_places_logo.png", :height => "75" %>
-                      </td>
+                        <td class="title">
+                            <%= image_tag "logo/Common_places_logo.png", :height => "75" %>
+                        </td>
 
                         <td>
-                          Date: <%= Time.now.strftime("%d/%m/%Y") %><br>
+                            Date:
+                            <%= Time.now.strftime("%d/%m/%Y") %><br>
                         </td>
                     </tr>
                 </table>
@@ -21,10 +22,10 @@
                 <table>
                     <tr>
                         <td>
-                          <%= current_user.first_name + " " + current_user.last_name %><br>
-                          <%= current_user.unit%><br>
-                          <%= current_user.condo%><br>
-                          <%= current_user.postal_code%><br>
+                            <%= current_user.first_name + " " + current_user.last_name %><br>
+                            <%= current_user.unit%><br>
+                            <%= current_user.condo%><br>
+                            <%= current_user.postal_code%><br>
                         </td>
                     </tr>
                 </table>
@@ -36,9 +37,7 @@
                 Payment Method
             </td>
 
-            <td>
-
-            </td>
+            <td></td>
         </tr>
 
         <tr class="details">
@@ -65,35 +64,38 @@
         <tr class="item">
             <% sum = 0 %>
             <% @requests.each do |request| %>
-              <% if current_user.id == request.user_id %>
-              <td>
+            <% if current_user.id == request.user_id %>
+            <td>
                 <%= request.service.kind %>
-              </td>
-              <td>
+            </td>
+            <td>
                 <%= request.date.to_date %>
-              </td>
-              <td>
+            </td>
+            <td>
                 <%= request.time.to_time.strftime("%I:%M %p") %>
-              </td>
-              <td>
+            </td>
+            <td>
                 $<%= request.service.cost %>
-              </td>
-              <% sum += request.service.cost %>
-          </tr>
-            <% end %>
-          <% end %>
+            </td>
+            <% sum += request.service.cost %>
+        </tr>
+        <% end %>
+        <% end %>
 
         <tr class="total">
             <td>
-              <% if sum == 0 %>
-              You have no request currently
-              <% end %>
+                <% if sum == 0 %>
+                You have no request currently
+                <% end %>
             </td>
             <td></td>
             <td></td>
             <td>
-               Total: $<%= sum %>
+                Total: $<%= sum %>
             </td>
         </tr>
     </table>
+    <form>
+        <input type="button" value="Print this page" onClick="window.print()">
+    </form>
 </div>
