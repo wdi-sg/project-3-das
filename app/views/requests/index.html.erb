@@ -68,16 +68,16 @@
         <% sum = 0 %>
         <% @requests.each do |request| %>
         <td>
-            <%= current_user.first_name + " " + current_user.last_name %>
+            <%= request.user.first_name%>
         </td>
         <td>
-            <%= current_user.unit %>
+            <%= request.user.unit %>
         </td>
         <td>
-            <%= current_user.condo %>
+            <%= request.user.condo %>
         </td>
         <td>
-            <%= current_user.postal_code %>
+            <%= request.user.postal_code %>
         </td>
         <td>
             <%= request.service.kind %>
