@@ -5,7 +5,12 @@
 # below each fixture, per the syntax in the comments below
 #
 # one: {}
+<<<<<<< HEAD
 # # column: value
 # #
+=======
+# column: value
+#
+>>>>>>> testing
 # two: {}
 # column: value

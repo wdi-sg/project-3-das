@@ -31,6 +31,7 @@
               <li role="presentation"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
 
               <% elsif user_signed_in? && current_user.email == "admin@das.com" %>
+              <li role="presentation"><a href="/requests">View All Requests</a></li>
               <li role="presentation"><a href="/services/new">Add Services</a></li>
               <li role="presentation"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
               <!-- <li role="presentation"><a href="/about" class="active">About Us</a></li> -->
