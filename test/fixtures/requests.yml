@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user: one
-  service: one
+  user: 1
+  service: 1
 
 two:
-  user: two
-  service: two
+  user: 2
+  service: 3
