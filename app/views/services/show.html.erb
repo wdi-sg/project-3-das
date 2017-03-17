@@ -1,7 +1,6 @@
-<div class="containe">
+<div class="container">
     <p>
-        <h2><strong>Kind:</strong></h2>
-        <p><%= @service.kind %></p>
+        <h2><%= @service.kind %></h2>
     </p>
 
     <p>
@@ -23,9 +22,11 @@
         <a href="/requests/new/?service_id=<%=params[:id]%>" class="btn btn-info" style="color:white">Request</a>
     </p>
 
-<% else %>
+    <% elsif current_user.blank? %>
+    <%= link_to 'Back', services_path, class:"btn btn-default"%>
+    <% else %>
     <%= link_to 'Edit', edit_service_path(@service), class:"btn btn-primary", style:"color:white" %>
-    |
     <%= link_to 'Back', services_path, class:"btn btn-default"%>
     <% end %>
+
 </div>
