@@ -1,3 +1,4 @@
+
 # Common Places
 [Link to Common Places](https://commonplaces-app.herokuapp.com/)
 
@@ -5,6 +6,7 @@
 
 At Common Places, we believe that all your errands can be run conveniently while you concentrate with what you do best. Laundry, pet-grooming, car detailing, you name it, we get it done for you. Commonplaces started with a small
   team of 3 dedicated members to help you with your daily errands at a fraction of the usual cost. We carefully source for our service providers in Singapore to ensure that while we keep the cost low, we do not compromise on quality.
+
 
 ## Ruby Version and System dependencies
 * Rails
