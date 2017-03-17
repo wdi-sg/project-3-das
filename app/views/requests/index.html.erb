@@ -1,9 +1,51 @@
 <% if current_user.email == "admin@das.com" %>
-<div class="container">
+
+<div class="invoice-box">
+    <table cellpadding="0" cellspacing="0">
+        <tr class="top">
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td class="title">
+                            <%= image_tag "logo/Common_places_logo.png", :height => "75" %>
+                        </td>
+
+                        <td>
+                            Date:
+                            <%= Time.now.strftime("%d/%m/%Y") %><br>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr class="information">
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td>
+                            <%= "Admin View" %><br>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
 
   <table>
     <tr class="heading">
 
+        <td>
+            <h4>User</h4>
+        </td>
+        <td>
+            <h4>Unit</h4>
+        </td>
+        <td>
+            <h4>Condo</h4>
+        </td>
+        <td>
+            <h4>Postal Code</h4>
+        </td>
         <td>
             <h4>Kind</h4>
         </td>
@@ -26,6 +68,18 @@
         <% sum = 0 %>
         <% @requests.each do |request| %>
         <td>
+            <%= current_user.first_name + " " + current_user.last_name %>
+        </td>
+        <td>
+            <%= current_user.unit %>
+        </td>
+        <td>
+            <%= current_user.condo %>
+        </td>
+        <td>
+            <%= current_user.postal_code %>
+        </td>
+        <td>
             <%= request.service.kind %>
         </td>
 
@@ -46,7 +100,10 @@
     </tr>
     <% end %>
   </table>
-</div>
+</div><br>
+<form>
+  <input type="button" value="Print this page" onClick="window.print()">
+</form><br>
 <% else %>
 
 <div class="invoice-box">
@@ -146,9 +203,9 @@
             </td>
         </tr>
     </table>
-    <form>
-        <input type="button" value="Print this page" onClick="window.print()">
-    </form>
-</div>
 
+</div>
+<br><form>
+    <input type="button" value="Print this page" onClick="window.print()">
+</form><br>
 <% end %>
