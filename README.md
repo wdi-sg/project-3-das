@@ -12,6 +12,26 @@ At Common Places, we believe that all your errands can be run conveniently while
 * Cloudinary
 * Carrierwave
 
+## Wireframes
+
+* Viewpoint for User
+
+![alt tag](http://i.imgur.com/rDcmRgL.png)
+![alt tag](http://i.imgur.com/F76wWmz.png
+![alt tag](http://i.imgur.com/j5jVGKc.png)
+![alt tag](http://i.imgur.com/9gcQLf9.png)
+![alt tag](http://i.imgur.com/wY5l5nR.png)
+![alt tag](http://i.imgur.com/6RVyatw.png)
+![alt tag](http://i.imgur.com/yaRlbrt.png)
+
+* Viewpoint for Admin
+
+![alt tag](http://i.imgur.com/GlhH7Wk.png)
+![alt tag](http://i.imgur.com/AQoaszq.png)
+![alt tag](http://i.imgur.com/vfhZhfU.png)
+
+
+
 ## Configuration
 * Git clone the repository
 * Run `bundle install` on your terminals to install all dependencies
