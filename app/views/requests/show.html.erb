@@ -1,22 +1,19 @@
 
-<p>
+<!-- <p>
   <strong>User:</strong>
   <%= @request.user.first_name + " " + @request.user.last_name %>
-</p>
+</p> -->
 
 <p>
-  <strong>Service:</strong>
-  <%= @request.service.kind %>
+  <h2>Requested: <%= @request.service.kind %></h2>
 </p>
 
 <p>
   <strong>Date:</strong>
   <%= @request.date.strftime("%B %d, %Y") %>
-</p>
-
-<p>
+  <br>
   <strong>Time:</strong>
-  <%= @request.time.strftime("%H:%M %p")%>
+  <%= @request.time.strftime("%I:%M %p")%>
 </p>
 
 <%= link_to 'Edit', edit_request_path(@request), class:"btn btn-default" %>

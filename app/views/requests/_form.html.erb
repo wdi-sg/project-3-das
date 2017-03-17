@@ -23,12 +23,12 @@
 
   <div class="field">
       <%= f.label :date %><br/>
-      <%= f.date_field :date, autofocus: true %>
+      <%= f.date_field :date, min: Date.today, value: Date.today, autofocus: true, presence: true %>
   </div>
 
   <div class="field">
       <%= f.label :time %><br/>
-      <%= f.time_field :time, autofocus: true %>
+      <%= f.time_field :time, autofocus: true, presence: true %>
   </div>
 
   <div class="field" hidden="true"  >
@@ -37,6 +37,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Request", class:"btn btn-default"%>
   </div>
 <% end %>
