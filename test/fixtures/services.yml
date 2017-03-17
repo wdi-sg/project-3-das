@@ -1,9 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  kind: MyString
+laundry:
+  kind: "Laundry"
   cost: 1
-
-two:
-  kind: MyString
-  cost: 1
+  description: "laundry is fun"
