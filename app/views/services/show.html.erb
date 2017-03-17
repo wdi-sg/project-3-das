@@ -3,15 +3,14 @@
         <h2><%= @service.kind %></h2>
     </p>
 
-    <p>
-        <strong>Cost:</strong>
+        <strong>Cost: $</strong>
         <%= @service.cost %>
-    </p>
 
-    <p>
-        <strong>Description:</strong>
-        <%= @service.description %>
-    </p>
+  			<div class="center">
+  				<div class="col-md-6 col-md-offset-3">
+  					<p class="lead"><strong>Description:</strong> <%= @service.description %></p>
+  				</div>
+  			</div>
 
     <p>
         <img src="<%= @service.image %>" alt="<%= @service.kind %>">
